@@ -38,11 +38,11 @@ export class SettingsService
 			this._httpClient.get<AppSettings>("app.config.json").pipe(
 				tap((settings: AppSettings) =>
 				{
-					console.log("before settings next");
+					// console.log("before settings next");
 					// this._settings = settings;
 					this._settings = settings;
 					this._settings$.next(settings);
-					console.log("_settings goes => ", this._settings);
+					// console.log("_settings goes => ", this._settings);
 					resolve(true);
 				})
 			).subscribe();

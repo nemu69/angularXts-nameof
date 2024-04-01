@@ -5,6 +5,7 @@ import { defineConfig } from "vite";
 import { checker } from "vite-plugin-checker";
 import angular from "@analogjs/vite-plugin-angular";
 import tsconfigPaths from "vite-tsconfig-paths";
+import tsNameof from "vite-plugin-ts-nameof";
 import * as path from "path";
 
 export default defineConfig(({ mode }) => ({
@@ -14,6 +15,7 @@ export default defineConfig(({ mode }) => ({
 		},
 	},
 	plugins: [
+		tsNameof(),
 		angular({ inlineStylesExtension: "scss", tsconfig: "tsconfig.json" }),
 		checker({ typescript: true }),
 		tsconfigPaths(),

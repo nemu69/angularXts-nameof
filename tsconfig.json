@@ -56,7 +56,7 @@
 			{
 				"transform": "@typescript-nameof/nameof"
 			}
-		]
+		],
 	},
 	"typedocOptions": {
 		"entryPoints": [ "./src/**/*.ts" ],
@@ -75,5 +75,7 @@
 		"strictInjectionParameters": true,
 		"strictInputAccessModifiers": true,
 		"strictTemplates": true
-	}
+	},
+	// "include": ["src/**/*.ts", "src/**/*.d.ts"],
+	// "files": ["./node_modules/@typescript-nameof/types/index.d.cts"]
 }
