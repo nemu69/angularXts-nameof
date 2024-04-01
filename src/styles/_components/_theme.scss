@@ -1,6 +1,5 @@
 @use '@angular/material' as mat;
 @use 'variables' as var;
-@use '@mat-datetimepicker/core/datetimepicker/datetimepicker-theme' as matdp;
 
 @include mat.core();
 // @include mat.legacy-core();
@@ -44,11 +43,9 @@ $dark-theme: mat.define-dark-theme((
 	density: 0,
 ));
 @include mat.all-component-themes($light-theme);
-@include matdp.mat-datetimepicker-theme($light-theme);
 
 
 .dark-theme {
-	@include matdp.mat-datetimepicker-theme($dark-theme);
 	@include mat.all-component-themes($dark-theme);
 }
 
