@@ -114,6 +114,10 @@ module.exports = {
 		  "rules": {
 			"max-lines-per-function": "off"
 		  }
-		}
+		},
+		{
+			extends: ['plugin:@typescript-eslint/disable-type-checked'],
+			files: ["./node_modules/@typescript-nameof/types/index.d.cts"],
+		},
 	  ]
 };

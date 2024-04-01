@@ -76,6 +76,6 @@
 		"strictInputAccessModifiers": true,
 		"strictTemplates": true
 	},
-	// "include": ["src/**/*.ts", "src/**/*.d.ts"],
-	// "files": ["./node_modules/@typescript-nameof/types/index.d.cts"]
+	"include": ["src/**/*.ts", "src/**/*.d.ts"],
+	"files": ["./node_modules/@typescript-nameof/types/index.d.cts"]
 }
