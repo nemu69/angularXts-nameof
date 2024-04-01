@@ -1,0 +1,33 @@
+.table-container__card-mode {
+	@include table-displayed-as-card();
+}
+
+@media screen and (max-width: map-get($breakpoints, 'small')) {
+	.filter-container {
+		flex-direction: column !important;
+
+		.new-btn {
+			margin-bottom: 0 !important;
+		}
+
+		.filter-list {
+			margin-top: 20px;
+		}
+
+		.filter-search-container {
+			flex-direction: column !important;
+			margin-top: 20px;
+		}
+	}
+	.table-container__sm {
+		@include table-displayed-as-card();
+	}
+}
+
+.table-container__card-mode .col-3:has(.filter-search-container) {
+	width: 100%;
+}
+
+.table-container__card-mode {
+	padding: 0em 0.5em !important;
+}

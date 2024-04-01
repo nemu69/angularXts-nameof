@@ -1,0 +1,367 @@
+@use "variables" as var;
+@import "@angular/material/theming";
+
+/* Buttons */
+@mixin button-variant($bg, $fg, $bg-hover, $fg-hover, $mode: 'darken') {
+	$variant-base: $bg;
+	$variant-hover-bg-color: $bg-hover;
+	$variant-hover-color: $fg-hover;
+	$variant-active-color: if($mode == 'lighten', lighten($bg, 12%), darken($bg, 12%));
+	$disabled-color: #dbdbdb;
+
+	color: $fg;
+	background-color: $variant-base;
+	border-color: $variant-base;
+
+	&:focus {
+		background-color: $variant-hover-bg-color;
+		border-color: $variant-hover-bg-color;
+	}
+
+	&:hover {
+		background-color: $variant-hover-bg-color;
+		color: $variant-hover-color;
+		border-color: $variant-hover-bg-color;
+	}
+
+	&:active {
+		background-color: $variant-active-color;
+		border-color: $variant-active-color;
+	}
+
+	&.button-outlined {
+		color: $variant-base;
+		border-width: 2px;
+		border-style: solid;
+		border-color: currentColor;
+		background-color: transparent;
+
+		transition: all 0.5s ease-out 50ms;
+
+		&,
+		&:hover,
+		&:active {
+			color: $variant-base;
+			background-color: rgba(0, 0, 0, 0);
+		}
+
+		&:hover,
+		&:focus {
+			background-color: rgba($variant-base, .15);
+		}
+
+		&:active {
+			color: white;
+			background-color: $variant-base;
+			border-color: $variant-base;
+		}
+	}
+
+	&:disabled,
+	&.disabled {
+		&,
+		&:hover,
+		&:active,
+		&:focus {
+			border-color: $disabled-color;
+			background-color: $disabled-color;
+		}
+	}
+}
+
+@mixin button-size($min-width, $min-height, $padding-vertical, $font-size) {
+	min-width: $min-width;
+	min-height: $min-height;
+	padding: 0 $padding-vertical;
+	font-size: $font-size;
+}
+
+@mixin button($width, $height, $borderRadius) {
+	align-items: center !important;
+	justify-content: center !important;
+	display: flex;
+	height: $height !important;
+	width: $width !important;
+	margin: 0.5dvh 0.5vw !important;
+	border-radius: $borderRadius;
+	& mat-icon {
+		margin-inline: 5%;
+	}
+
+	& p, h2 {
+		margin: 0 !important;
+	}
+}
+
+/* End Buttons */
+
+/* Icons */
+
+@mixin icon-size($size) {
+	//font-family: 'Material Icons Outlined';
+	//font-weight: normal;
+	//font-style: normal;
+	font-size: $size !important;
+	height: $size !important;
+	width: $size !important;
+	//line-height: 1;
+	//letter-spacing: normal;
+	//text-transform: none;
+	//display: inline-block;
+	//white-space: nowrap;
+	//word-wrap: normal;
+	//direction: ltr;
+
+}
+
+/* Cards */
+@mixin sidebar-block-title {
+	color: #616161;
+	margin: 5dvh 0 1dvh 2dvh !important;
+}
+
+@mixin card-variant($background, $actionColor, $actionBackgroundColor: #ffffff) {
+	background-color: $background;
+	align-items: center;
+	//border-left: 5px solid $borderColor;
+	justify-content: space-between;
+	padding: 8px;
+	border-radius: 12px;
+	width: 100%;
+	@include mat-elevation(6);
+	transition: background-color 0.5s ease-out 50ms;
+	&:hover {
+		background-color: #D2E5FB;
+	}
+
+	&.selected {
+		background-color: #D2E5FB;
+	}
+
+	.item-content {
+		padding-left: 8px;
+		user-select: none;
+
+		.item-title {
+			color: #000;
+			font-size: 28px !important;
+			font-weight: 500 !important;
+			margin: 0;
+		}
+
+		.item-subtitle {
+			color: #000;
+			font-weight: 500 !important;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-line-clamp: 4;
+			-webkit-box-orient: vertical;
+		}
+
+		.item-date {
+			margin-top: 2%;
+		}
+	}
+
+	.item-action {
+		span.icon {
+			color: $actionColor;
+			background-color: $actionBackgroundColor;
+		}
+	}
+}
+
+@mixin card-exploitation($background, $borderColor) {
+	background-color: $background;
+	align-items: center;
+	justify-content: space-between;
+	padding: 8px;
+	border-radius: 12px;
+	width: 100%;
+	@include mat-elevation(3);
+
+	.item-content {
+		padding-left: 8px;
+		user-select: none;
+
+		.item-title {
+			color: #555555;
+			font-size: 28px !important;
+			font-weight: 500 !important;
+			margin: 0;
+		}
+	}
+
+	.item-action {
+		span.icon {
+			color: $borderColor;
+		}
+	}
+}
+
+/* End Cards */
+
+
+/* Borders */
+@mixin dashed-border-variant($borderColor) {
+	background-image: repeating-linear-gradient(60deg, $borderColor, $borderColor 4.35px, transparent 5px, transparent 9.35px, $borderColor 10px),
+	repeating-linear-gradient(150deg, $borderColor, $borderColor 4.35px, transparent 5px, transparent 9.35px, $borderColor 10px),
+	repeating-linear-gradient(240deg, $borderColor, $borderColor 4.35px, transparent 5px, transparent 9.35px, $borderColor 10px),
+	repeating-linear-gradient(330deg, $borderColor, $borderColor 4.35px, transparent 5px, transparent 9.35px, $borderColor 10px);
+	background-size: 2px calc(100% + 20px), calc(100% + 20px) 2px, 2px calc(100% + 20px), calc(100% + 20px) 2px;
+	background-position: 0 0, 0 0, 100% 0, 0 100%;
+	background-repeat: no-repeat;
+
+	&.animated {
+		animation: borderAnimation 0.4s infinite linear;
+	}
+}
+
+@keyframes borderAnimation {
+	from {
+		background-position: 0 0, -20px 0, 100% -20px, 0 100%;
+	}
+	to {
+		background-position: 0 -20px, 0 0, 100% 0, -20px 100%;
+	}
+}
+
+/* End Borders */
+
+/* Tables */
+@mixin table-displayed-as-card() {
+	.sort-container {
+		display: flex !important;
+	}
+
+	.mat-elevation-z8 {
+		background: transparent;
+		box-shadow: none;
+	}
+
+	.mat-mdc-header-row {
+		display: none;
+	}
+
+	tbody {
+		display: block;
+		width: 100%;
+	}
+
+	.mat-mdc-table {
+		background: transparent;
+
+		* {
+			box-sizing: border-box;
+		}
+
+		.mat-mdc-row {
+			display: block;
+			overflow: hidden;
+			height: auto;
+			position: relative;
+			clear: both;
+			background-color: white;
+			border-radius: 0 12px 12px 0;
+			box-shadow: 3px 5px 18px -8px rgb(0 0 0 / 60%);
+			transition: 0.3s;
+			padding: 0;
+			border-left: 10px solid var(--color-primary);
+			border-top-right-radius: 8px;
+			border-bottom-right-radius: 8px;
+
+			+ .mat-mdc-row {
+				margin-top: 4%;
+			}
+
+			&:hover {
+				transform: translateZ(0) scale(1.015);
+				will-change: transform;
+			}
+		}
+
+		.mat-mdc-cell {
+			display: block;
+			width: 100%;
+			padding: 0 16px;
+			margin: 16px 0;
+			border: 0 none;
+
+			&:first-child {
+				padding: 0 48px 0 16px;
+
+				a {
+					font-size: 20px;
+					color: inherit;
+				}
+
+				&:before {
+					display: none;
+				}
+			}
+
+			&.m-card-big-title {
+				color: #555555;
+				font-size: 24px;
+				font-weight: 500;
+			}
+
+			&.m-card-title {
+				color: #555555;
+				font-size: 16px;
+				font-weight: 500;
+			}
+
+			&.m-card-sub-title {
+				margin-top: -8px;
+				padding: 0 48px 0 16px;
+				color: rgba(0, 0, 0, .54);
+			}
+
+			&.m-card-hidden {
+				display: none;
+			}
+		}
+	}
+
+	.mat-mdc-paginator {
+		margin-top: 24px;
+	}
+}
+
+@mixin mat-table-columns($columns) {
+	.mat-column- {
+		@each $colName, $props in $columns {
+
+			$width: map-get($props, 'width');
+			$padding: map-get($props, 'padding');
+
+			&#{$colName} {
+				width: $width;
+				padding: $padding;
+			}
+		}
+	}
+}
+
+/* End tables */
+
+
+/* Font-size */
+@mixin font-size($fs-map, $fs-breakpoints: var.$breakpoints) {
+	@each $fs-breakpoint, $fs-font-size in $fs-map {
+		@if $fs-breakpoint == null {
+			font-size: var($fs-font-size) ;
+		} @else {
+			@if map-has-key($fs-breakpoints, $fs-breakpoint) {
+				$fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+			}
+			@media screen and (min-width: $fs-breakpoint) {
+				font-size: var($fs-font-size) ;
+			}
+		}
+	}
+}
+
+/* End font-size */

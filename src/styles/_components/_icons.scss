@@ -1,0 +1,33 @@
+.icons-l {
+	@include icon-size(33px);
+}
+
+.icons-l-rounded {
+	@include icon-size(33px);
+	border-radius: 50%;
+}
+
+.icons-xl {
+	@include icon-size(40px);
+}
+
+.icons-xl-rounded {
+	@include icon-size(40px);
+	border-radius: 50%;
+}
+
+.icon-text {
+	margin-right: 0.5vw;
+}
+.icon-KO {
+	color: var(--KO, #d60000c5);
+}
+.icon-warning {
+	color: var(--WARNING, #fbbd05be);
+}
+.icon-OK {
+	color: var(--OK, #65CA4C);
+}
+.icon-NA {
+	color: var(--NA, #D9D9D9);
+}

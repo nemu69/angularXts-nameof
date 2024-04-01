@@ -1,0 +1,20 @@
+// Customize
+
+.p-fs {
+	@include font-size($p-font-sizes);
+}
+
+.h1-fs {
+	@include font-size($h1-font-sizes);
+}
+
+// Global
+
+
+.eks-text-primary {
+	color: var(--color-primary) !important;
+}
+
+.whiteness {
+	filter: brightness(0) invert(1);
+}

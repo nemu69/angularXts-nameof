@@ -1,0 +1,79 @@
+{
+	"compileOnSave": false,
+	"compilerOptions": {
+		"baseUrl": "./",
+		"paths": {
+			"vite": [
+				"node_modules/vite"
+			],
+			"@entities/*": [
+				"src/app/core/entities/*"
+			],
+			"@shared/*": [
+				"src/app/core/shared/*"
+			],
+			"@core/*": [
+				"src/app/core/*"
+			],
+			"@env/*": [
+				"src/environments/*"
+			],
+			"images/*": [
+				"src/assets/images/*"
+			]
+		},
+		"skipLibCheck": true,
+		"outDir": "./dist/out-tsc",
+		"forceConsistentCasingInFileNames": true,
+		"strict": true,
+		"strictPropertyInitialization": false,
+		"useUnknownInCatchVariables": false,
+		"noImplicitOverride": true, 
+		"noPropertyAccessFromIndexSignature": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"sourceMap": true,
+		"declaration": false,
+		"downlevelIteration": true,
+		"experimentalDecorators": true,
+		"esModuleInterop": true,
+		"moduleResolution": "Node",
+		"importHelpers": true,
+		"resolveJsonModule": true,
+		"target": "ES2022",
+		"module": "ES2022",
+		"useDefineForClassFields": false,
+		"emitDecoratorMetadata": false,
+		"types": ["vite/client"],
+		"lib": [
+			"ES2022",
+			"dom"
+		],
+		"plugins": [
+			{
+				"name": "@typescript-nameof/nameof"
+			},
+			{
+				"transform": "@typescript-nameof/nameof"
+			}
+		]
+	},
+	"typedocOptions": {
+		"entryPoints": [ "./src/**/*.ts" ],
+		"json": "docs/typedoc-jason.json",
+		"entryPointStrategy": "Resolve",
+		"excludeNotDocumented": true,
+		// "plugin": [ "typedoc-plugin-coverage" ],
+		// "requiredToBeDocumented": [ "coverage.svg" ],
+		// "categorizeByGroup": true,
+		"out": "docs/generated_doc",
+		"theme": "default",
+		"readme": "README.md"
+	},
+	"angularCompilerOptions": {
+		"enableI18nLegacyMessageIdFormat": false,
+		"strictInjectionParameters": true,
+		"strictInputAccessModifiers": true,
+		"strictTemplates": true
+	}
+}

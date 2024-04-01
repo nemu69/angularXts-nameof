@@ -1,0 +1,11 @@
+image: node:20.10-bullseye-slim
+
+LaunchTest:
+  stage: test
+  script:
+    - npm run test
+
+BuildApp:
+  stage: build
+  script:
+    - npm run build

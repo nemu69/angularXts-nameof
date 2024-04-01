@@ -1,0 +1,235 @@
+a.button,
+button,
+input[type=button],
+input[type=submit] {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	border-radius: 0;
+	background-color: transparent;
+	background-image: none;
+	vertical-align: middle;
+	text-align: center;
+	user-select: none;
+	appearance: none;
+	line-height: inherit;
+	font-family: inherit;
+
+	&:not(:disabled) {
+		cursor: pointer;
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
+
+
+.button {
+	@include button-size(140px, 50px, 14px, 1rem);
+	@include button-variant(white, black, black, white);
+
+	position: relative;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	flex: 0 0 auto;
+	border-radius: map-get($button, 'border-radius');
+	border: map-get($button, 'border-width') solid;
+	border-color: transparent;
+	font-weight: map-get($button, 'font-weight');
+	line-height: 1;
+	user-select: none;
+	touch-action: manipulation;
+	transition: background-color 160ms,
+	color 160ms,
+	border 160ms;
+
+	// Truncate overflow
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+
+// Sizes
+.button-lg {
+	@include button-size(260px, 60px, 18px, 22px);
+}
+
+// Variants
+.button-teal {
+	@include button-variant(map-get(map-get($button, 'variant'), 'teal'), black, darken(map-get(map-get($button, 'variant'), 'teal'), 12%), black, 'lighten');
+}
+
+.button-primary {
+	@include button-variant(map-get(map-get($button, 'variant'), 'primary'), white, darken(map-get(map-get($button, 'variant'), 'primary'), 12%), white, 'lighten');
+}
+
+.button-secondary {
+	@include button-variant(map-get(map-get($button, 'variant'), 'secondary'), white, map-get(map-get($button, 'variant'), 'secondary'), white, 'darken');
+}
+
+.button-success {
+	@include button-variant(map-get(map-get($button, 'variant'), 'success'), white, darken(map-get(map-get($button, 'variant'), 'success'), 12%), white, 'lighten');
+}
+
+.button-darken-success {
+	@include button-variant(map-get(map-get($button, 'variant'), 'success'), black, darken(map-get(map-get($button, 'variant'), 'success'), 12%), black, 'darken');
+}
+
+.button-danger {
+	@include button-variant(map-get(map-get($button, 'variant'), 'danger'), white, darken(map-get(map-get($button, 'variant'), 'danger'), 12%), white, 'lighten');
+}
+
+.button-warning {
+	@include button-variant(map-get(map-get($button, 'variant'), 'warning'), black, darken(map-get(map-get($button, 'variant'), 'warning'), 12%), black, 'darken');
+}
+
+.button-iconed-left {
+	i,
+	span {
+		margin-right: .4em;
+	}
+}
+
+.button-iconed-right {
+	i,
+	span {
+		margin-left: .4em;
+	}
+}
+
+/* TODO(mdc-migration): The following rule targets internal classes of button that may no longer apply for the MDC version.*/
+.mat-button-wrapper {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	font-size: 200%
+}
+
+.button-navigation {
+	@include button(100%, 50px, 15px);
+}
+
+.button-sidebar {
+	@include button(90%, 40px, 30px);
+}
+
+.button-oval {
+	@include button(100%, 50px, 30px);
+}
+
+.button-rounded {
+	@include button(40px, 40px, 50%);
+}
+
+
+#input-connect {
+	position: absolute;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: grey;
+	background-color: #fff;
+	border: 3px solid #2c2c2c;
+
+	&--top {
+		@extend #input-connect;
+		top: -12%;
+		left: 44%;
+		height: 50px;
+		width: 50px;
+		border-color: transparent;
+	}
+
+	&--left {
+		@extend #input-connect;
+		top: 43%;
+		left: -2%;
+		height: 20px;
+		width: 20px;
+	}
+
+	&--right {
+		@extend #input-connect;
+		top: 43%;
+		right: -2%;
+		height: 20px;
+		width: 20px;
+	}
+}
+
+
+.dashed-border {
+	&.initialized {
+		@include dashed-border-variant(var(--color-initialized));
+		color: var(--color-initialized);
+	}
+
+	&.running {
+		@include dashed-border-variant(var(--color-running));
+		color: var(--color-running);
+	}
+
+	&.closed {
+		@include dashed-border-variant(var(--color-closed));
+		color: var(--color-closed);
+	}
+
+	&.finished {
+		@include dashed-border-variant(var(--color-finished));
+		color: var(--color-finished);
+	}
+
+	&.abort {
+		@include dashed-border-variant(var(--color-abort));
+		color: var(--color-abort);
+	}
+
+	&.running-mode-container {
+		@include dashed-border-variant(var(--color-primary));
+	}
+}
+
+
+.btn-launch {
+	background: white;
+	color: var(--color-primary);
+	border: 3px solid var(--color-primary);
+	border-radius: 12px;
+	width: 100%;
+	padding-top: 0.875rem;
+	padding-right: 1.75rem;
+	padding-bottom: 0.875rem;
+	padding-left: 1.75rem;
+	transition: all 0.2s ease-out;
+
+	margin-bottom: 4%;
+
+	&:hover {
+		transform: translateY(0.3em);
+		background: var(--color-primary);
+		color: white;
+		border: 3px solid #0554ff;
+	}
+
+
+	& mat-icon {
+		font-size: 41px;
+		margin-bottom: 16px;
+		margin-right: 3%;
+		width: fit-content;
+	}
+
+	& p {
+		margin: 0 !important;
+		//font-size: 22px !important;
+		font-weight: 500;
+		line-break: auto;
+	}
+}

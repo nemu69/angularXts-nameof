@@ -1,0 +1,16 @@
+.custom-step-form-panel {
+	.mat-bottom-sheet-container {
+		width: 100%;
+		min-height: 92dvh;
+		border-radius: 18px 18px 0px 0px;
+		overflow: hidden !important;
+		padding: 0 !important;
+	}
+}
+
+.custom-favorite-operation-panel {
+	.mat-bottom-sheet-container {
+		min-height: 76dvh;
+		padding: 3% !important;
+	}
+}

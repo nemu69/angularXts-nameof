@@ -1,0 +1,23 @@
+.todolist-card {
+	@include card-variant(#ffffff, #006eeb);
+
+	&--finished-conform {
+		@include card-variant(#ffffff, #ffffff, var(--color-success));
+	}
+
+	&--finished-no-conform {
+		@include card-variant(#ffffff, #ffffff, var(--color-danger));
+	}
+}
+
+.exploitation-card {
+	@include card-exploitation(#ffffff, var(--color-primary));
+}
+
+.field-card {
+	@include card-variant(#ffffff, var(--color-status-in-progress));
+}
+
+.doc-card {
+	@include card-variant(#ffffff, var(--color-teal));
+}

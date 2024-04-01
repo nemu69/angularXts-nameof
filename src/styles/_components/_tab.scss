@@ -1,0 +1,75 @@
+.custom-sidebar-tabs {
+	&.mat-mdc-tab-group {
+		height: 100%;
+	}
+	/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+	.mat-tab-list {
+		margin-bottom: 2%;
+		margin-top: 1%;
+	}
+
+	.mat-mdc-tab-header {
+		border: unset;
+	}
+	/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+	.mat-tab-body-wrapper {
+		height: 100%;
+	}
+	/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+	.mat-tab-labels {
+		// background-color: #4ab3d1;
+		text-align: center;
+	}
+
+	.mat-ink-bar {
+		background-color: var(--color-primary) !important;
+		height: 0;
+	}
+	/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+	/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+	.mat-tab-label-active {
+		/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+		.mat-tab-label-content {
+			transition: 0.2s ease-in-out;
+			@media (max-width: map-get($breakpoints, 'small')) {
+				font-size: 18px;
+				font-weight: 600;
+			}
+			// Tablet
+			@media (min-width: map-get($breakpoints, 'small')) and (max-width: map-get($breakpoints, 'medium')) {
+				font-size: 20px;
+				font-weight: 600;
+			}
+			// Desktop
+			@media (min-width: map-get($breakpoints, 'medium')) {
+				font-size: 25px;
+				font-weight: 600;
+			}
+		}
+
+	}
+	/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+	.mat-tab-label-content {
+		//color: white;
+
+		// Mobile
+		@media (max-width: map-get($breakpoints, 'small')) {
+			font-size: 12px;
+		}
+		// Tablet
+		@media (min-width: map-get($breakpoints, 'small')) and (max-width: map-get($breakpoints, 'medium')) {
+			font-size: 16px;
+		}
+		// Desktop
+		@media (min-width: map-get($breakpoints, 'medium')) {
+			font-size: 20px;
+		}
+	}
+	/* TODO(mdc-migration): The following rule targets internal classes of tabs that may no longer apply for the MDC version.*/
+	.mat-tab-label.mat-tab-label-active:not(.mat-tab-disabled),
+	.mat-tab-label.mat-tab-label-active.cdk-keyboard-focused:not(.mat-tab-disabled) {
+		// font-weight: 700;
+		color: var(--color-primary);
+		opacity: 1;
+	}
+}
