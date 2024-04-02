@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { BaseEntity } from "@entities/baseEntity";
 
 
 let x: string;
@@ -24,6 +25,7 @@ export class AppComponent
 		console.log(nameof<void>()); // Prints `void`
 		console.log(nameof<ITest>()); // Prints `ITest`
 		console.log(nameof<ITest>((test: ITest) => test.Prop)); // Prints `prop`
+		console.log(nameof<BaseEntity>()); // Prints `BaseEntity`
 	}
 
 }
