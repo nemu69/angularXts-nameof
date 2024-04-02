@@ -44,7 +44,7 @@
 		"module": "ES2022",
 		"useDefineForClassFields": false,
 		"emitDecoratorMetadata": false,
-		"types": ["vite/client"],
+		"types": ["vite/client", "@types/nameof"],
 		"lib": [
 			"ES2022",
 			"dom"
@@ -75,7 +75,5 @@
 		"strictInjectionParameters": true,
 		"strictInputAccessModifiers": true,
 		"strictTemplates": true
-	},
-	"include": ["src/**/*.ts", "src/**/*.d.ts"],
-	"files": ["./node_modules/@typescript-nameof/types/index.d.cts"]
+	}
 }
