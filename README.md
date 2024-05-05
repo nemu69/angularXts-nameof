@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Build this project
 
-Run `npm i && npm patch`
+Run `npm i && npm run patch`
 
 ## Development server
 
