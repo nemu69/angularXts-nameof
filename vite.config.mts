@@ -28,6 +28,8 @@ export default defineConfig(({ mode }) => ({
 		preprocessorOptions: {
 			scss: {
 				includePaths: [ "src/styles/_helpers", "node_modules" ],
+				api: "modern",
+				silenceDeprecations: [ "mixed-decls" ],
 			},
 		},
 	},

@@ -1,3 +1,5 @@
+@use '@angular/material' as mat;
+
 .sidebar-block-infos {
 	@include sidebar-block-title;
 
@@ -36,7 +38,7 @@
 	border: 2px solid #006eeb !important;
 	background-color: #006eeb;
 	color: #fff !important;
-	@include mat-elevation(4);
+	@include mat.elevation(4);
 }
 
 .btn-step {
@@ -50,13 +52,13 @@
 		border-color: #b7801a;
 		opacity: 1;
 		color: black !important;
-		@include mat-elevation(6);
+		@include mat.elevation(6);
 
 		&:active {
 			border: 2px solid #2c9dbd;
 			background-color: #2c9dbd;
 			color: #fff;
-			@include mat-elevation(1);
+			@include mat.elevation(1);
 		}
 	}
 }

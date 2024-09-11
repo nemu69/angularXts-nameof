@@ -1,5 +1,6 @@
 @use "variables" as var;
-@import "@angular/material/theming";
+@use '@angular/material' as mat;
+@use "functions";
 
 /* Buttons */
 @mixin button-variant($bg, $fg, $bg-hover, $fg-hover, $mode: 'darken') {
@@ -128,7 +129,7 @@
 	padding: 8px;
 	border-radius: 12px;
 	width: 100%;
-	@include mat-elevation(6);
+	@include mat.elevation(6);
 	transition: background-color 0.5s ease-out 50ms;
 	&:hover {
 		background-color: #D2E5FB;
@@ -156,6 +157,7 @@
 			text-overflow: ellipsis;
 			display: -webkit-box;
 			-webkit-line-clamp: 4;
+			line-clamp: 4;
 			-webkit-box-orient: vertical;
 		}
 
@@ -179,7 +181,7 @@
 	padding: 8px;
 	border-radius: 12px;
 	width: 100%;
-	@include mat-elevation(3);
+	@include mat.elevation(3);
 
 	.item-content {
 		padding-left: 8px;

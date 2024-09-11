@@ -1,0 +1,12 @@
+// access color values anywhere with this function by passing in
+// element name and color identifier
+// example: $bg-color: color-get(cool-table, bg);
+@function color-get($group-name, $color-name) {
+    @if (map-has-key($COLORS, $group-name)) {
+      $group: map-get($COLORS, $group-name);
+      @if (map-has-key($group, $color-name)) {
+        @return map-get($group, $color-name);
+      }
+    }
+    @return false;
+}

@@ -1,12 +1,17 @@
 // Scss imports
+@use '@angular/material' as mat;
 @import "./_helpers/helpers-dir";
 @import "./_components/components-dir";
 @import "./_vendors/vendors-dir";
 
-//@import "dhtmlx-gantt/codebase/dhtmlxgantt.css";
-
 html, body {
 	height: 100%;
+
+	@include mat.all-component-themes($light-theme);
+
+	.dark-theme {
+		@include mat.all-component-colors($dark-theme);
+	}
 }
 
 body {

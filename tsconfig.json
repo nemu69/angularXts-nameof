@@ -28,7 +28,7 @@
 		"strict": true,
 		"strictPropertyInitialization": false,
 		"useUnknownInCatchVariables": false,
-		"noImplicitOverride": true, 
+		"noImplicitOverride": true,
 		"noPropertyAccessFromIndexSignature": true,
 		"noImplicitReturns": true,
 		"noFallthroughCasesInSwitch": true,
@@ -44,7 +44,11 @@
 		"module": "ES2022",
 		"useDefineForClassFields": false,
 		"emitDecoratorMetadata": false,
-		"types": ["vite/client", "@types/nameof"],
+		"types": [
+			"vite/client",
+			"@types/nameof",
+			"@typescript-nameof/types"
+		],
 		"lib": [
 			"ES2022",
 			"dom"
